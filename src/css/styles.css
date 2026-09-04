@@ -4,9 +4,48 @@
 
 body {
 	margin: 0;
-	font-family: Georgia, 'Times New Roman', serif;
+	font-family: 'DM Sans', Arial, sans-serif;
 	background-color: #fff8fa;
 	color: #542536;
+}
+
+.product-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 18rem));
+	justify-content: center;
+	gap: 1.5rem;
+}
+
+.product-grid .card {
+	width: 18rem;
+	height: 100%;
+}
+
+@media (max-width: 650px) {
+	.product-grid {
+		grid-template-columns: minmax(0, 18rem);
+	}
+}
+
+.card-title {
+	font-family: 'Playfair Display', Georgia, serif;
+	font-weight: 700;
+	color: #8b1e45;
+}
+
+.card-text {
+	font-family: 'DM Sans', Arial, sans-serif;
+	font-size: 0.98rem;
+	line-height: 1.65;
+}
+
+.card-img-top {
+	width: 100%;
+	height: 220px;
+	aspect-ratio: 4 / 3;
+	object-fit: contain;
+	object-position: center;
+	background-color: #ffffff;
 }
 
 .site-header {
@@ -29,4 +68,22 @@ body {
 	font-size: clamp(1rem, 3vw, 1.3rem);
 	letter-spacing: 0.08em;
 	text-transform: lowercase;
+}
+
+.card .btn-primary {
+	border-color: #8b1e45;
+	background-color: #8b1e45;
+	color: #ffffff;
+}
+
+.card .btn-primary:hover,
+.card .btn-primary:focus,
+.card .btn-primary:active {
+	border-color: #6d1536;
+	background-color: #6d1536;
+	color: #ffffff;
+}
+
+.card .btn-primary:focus {
+	box-shadow: 0 0 0 0.25rem rgba(243, 166, 189, 0.55);
 }
