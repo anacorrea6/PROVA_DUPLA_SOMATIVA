@@ -13,7 +13,7 @@
   </head>
   <body>
     <!-- Header com fundo rosa -->
-    <header class="py-3" style="background-color: #f8c8dc">
+    <header class="py-3 site-header" style="background-color: #f8c8dc">
       <div class="container text-center">
         <h1 class="fw-bold display-5 m-0">Charme</h1>
         <p class="mb-2 text-muted">Cardápio digital</p>
@@ -48,14 +48,61 @@
       </div>
     </header>
 
+    <main id="cardapio" class="container my-5 product-grid">
+        <div class="card">
+            <img class="card-img-top" src="src/img/morango do amor.jpeg" alt="Morango do amor">
+            <div class="card-body">
+                <h5 class="card-title">Morango do Amor</h5>
+                <p class="card-text">Uma sobremesa que une a acidez de um morango fresco e suculento a um recheio cremoso de leite Ninho, envolto por uma casquinha de caramelo crocante salpicada com amendoim torrado.</p>
+                <p class="product-price">R$ 10,00</p>
+                <div class="quantity-control" aria-label="Quantidade de Morango do Amor">
+                  <button class="quantity-button" type="button" data-action="decrease" aria-label="Diminuir quantidade">-</button>
+                  <span class="quantity-value" aria-live="polite">0</span>
+                  <button class="quantity-button" type="button" data-action="increase" aria-label="Aumentar quantidade">+</button>
+                </div>
+                <a href="#contato" class="btn btn-primary">Pedir agora</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-img-top" src="src/img/espeto de uva com chocolate.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Espetinho de uva com chocolate</h5>
+                <p class="card-text">Uvas frescas e suculentas no palito, cobertas por uma camada crocante de chocolate. A combinação perfeita entre a doçura do chocolate e o frescor azedinho da fruta em uma sobremesa prática e fácil de comer.</p>
+                <p class="product-price">R$ 8,00</p>
+                <div class="quantity-control" aria-label="Quantidade de Espetinho de uva com chocolate">
+                  <button class="quantity-button" type="button" data-action="decrease" aria-label="Diminuir quantidade">-</button>
+                  <span class="quantity-value" aria-live="polite">0</span>
+                  <button class="quantity-button" type="button" data-action="increase" aria-label="Aumentar quantidade">+</button>
+                </div>
+                <a href="#contato" class="btn btn-primary">Pedir agora</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img class="card-img-top" src="src/img/kit com 60 Potes Quadrado 250ml com Tampa - Freezer e Micro-ondas - (Ideal Para Bolo no Pote, Sobremesa e Caldo).jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Bolo de pote</h5>
+                <p class="card-text">Camadas alternadas de bolo macio e bem molhado com recheios generosos e cremosos, servidas em um pote prático.</p>
+                <p class="product-price">R$ 12,00</p>
+                <div class="quantity-control" aria-label="Quantidade de Bolo de pote">
+                  <button class="quantity-button" type="button" data-action="decrease" aria-label="Diminuir quantidade">-</button>
+                  <span class="quantity-value" aria-live="polite">0</span>
+                  <button class="quantity-button" type="button" data-action="increase" aria-label="Aumentar quantidade">+</button>
+                </div>
+                <a href="#contato" class="btn btn-primary">Pedir agora</a>
+            </div>
+        </div>
+    </main>
+
     <!-- Conteúdo Principal -->
     <main class="container my-5">
       <section id="contato" class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-6">
           <h2 class="text-center mb-4 fw-bold">
-            Entre em contato com nossa produção!
+            Finalize o seu pedido!
           </h2>
-          <form>
+          <form id="pedido-form">
             <div class="mb-3">
               <label for="nome" class="form-label fw-semibold"
                 >Digite seu nome</label
@@ -70,14 +117,22 @@
 
             <div class="mb-3">
               <label for="doces" class="form-label fw-semibold"
-                >Escolha seus doces</label
+                >Escolha a forma de pagamento</label
               >
               <select class="form-select" id="doces">
                 <option selected>Selecione...</option>
-                <option value="1">Morango do amor</option>
-                <option value="2">Espetinho de uva com chocolate</option>
-                <option value="3">Bolo no pote</option>
+                <option value="1">Cartão de crédito</option>
+                <option value="2">Cartão de débito</option>
+                <option value="3">Dinheiro</option>
+                <option value="4">Pix</option>
               </select>
+            </div>
+
+            <div class="order-summary" aria-live="polite">
+              <h3>Resumo do pedido</h3>
+              <ul id="pedido-resumo">
+                <li>Nenhum produto selecionado.</li>
+              </ul>
             </div>
 
             <!-- Botão com fallback de estilo inline caso precise ver funcionando agora -->
@@ -86,13 +141,18 @@
               class="btn btn-rosa w-100 mt-3"
               style="background-color: #d63384; color: white"
             >
-              Finalizar Pedido
+              Finalizar pedido
             </button>
           </form>
+          <div id="pedido-confirmacao" class="order-confirmation" hidden>
+            <h2>Pedido concluído!</h2>
+            <p>Obrigada pelo pedido<span id="nome-confirmacao"></span>. Em breve entraremos em contato.</p>
+          </div>
         </div>
       </section>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="src/js/script.js"></script>
   </body>
 </html>

@@ -11,19 +11,25 @@ body {
 
 .product-grid {
 	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 18rem));
+	grid-template-columns: repeat(3, minmax(0, 1fr));
 	justify-content: center;
 	gap: 1.5rem;
 }
 
 .product-grid .card {
-	width: 18rem;
+	width: 100%;
 	height: 100%;
 }
 
 @media (max-width: 650px) {
 	.product-grid {
 		grid-template-columns: minmax(0, 18rem);
+	}
+}
+
+@media (min-width: 651px) and (max-width: 900px) {
+	.product-grid {
+		gap: 0.75rem;
 	}
 }
 
@@ -39,14 +45,23 @@ body {
 	line-height: 1.65;
 }
 
+.product-price {
+	margin: 1rem 0 0;
+	color: #8b1e45;
+	font-family: 'Playfair Display', Georgia, serif;
+	font-size: 1.35rem;
+	font-weight: 700;
+	text-align: right;
+}
+
 .card-img-top {
+	display: block;
 	width: 100%;
-	height: 220px;
 	aspect-ratio: 4 / 3;
+	height: 220px;
 	object-fit: contain;
 	object-position: center;
 	background-color: #ffffff;
-
 }
 header[style] {
 	position: relative;
@@ -120,6 +135,81 @@ header .navbar-collapse {
 
 .card .btn-primary:focus {
 	box-shadow: 0 0 0 0.25rem rgba(243, 166, 189, 0.55);
+}
+
+.quantity-control {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	margin: 1rem 0;
+}
+
+.quantity-button {
+	width: 2rem;
+	height: 2rem;
+	border: 0;
+	border-radius: 50%;
+	background-color: #f3a6bd;
+	color: #542536;
+	font-size: 1.25rem;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.quantity-button:hover,
+.quantity-button:focus {
+	background-color: #df7898;
+	color: #ffffff;
+}
+
+.quantity-value {
+	min-width: 1.5rem;
+	font-weight: 700;
+	text-align: center;
+}
+
+.order-summary {
+	margin-top: 1.5rem;
+	padding: 1rem;
+	border: 1px solid rgba(139, 30, 69, 0.2);
+	border-radius: 0.5rem;
+	background-color: #fff8fa;
+}
+
+.order-summary h3 {
+	margin: 0 0 0.75rem;
+	color: #8b1e45;
+	font-family: 'Playfair Display', Georgia, serif;
+	font-size: 1.2rem;
+}
+
+.order-summary ul {
+	margin: 0;
+	padding-left: 1.25rem;
+}
+
+.order-summary li {
+	margin-bottom: 0.35rem;
+}
+
+.order-confirmation {
+	padding: 2rem 1rem;
+	border: 1px solid rgba(139, 30, 69, 0.2);
+	border-radius: 0.5rem;
+	background-color: #fff8fa;
+	color: #542536;
+	text-align: center;
+}
+
+.order-confirmation h2 {
+	margin-bottom: 0.75rem;
+	color: #8b1e45;
+	font-family: 'Playfair Display', Georgia, serif;
+}
+
+.order-confirmation p {
+	margin: 0;
 }
 
 .btn-rosa {
