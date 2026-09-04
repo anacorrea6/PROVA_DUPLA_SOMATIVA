@@ -1,0 +1,32 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: Georgia, 'Times New Roman', serif;
+	background-color: #fff8fa;
+	color: #542536;
+}
+
+.site-header {
+	padding: 2rem 1rem 2.25rem;
+	text-align: center;
+	background-color: #f3a6bd;
+	color: #ffffff;
+	box-shadow: 0 2px 10px rgba(119, 40, 70, 0.16);
+}
+
+.site-header h1 {
+	margin: 0;
+	font-size: clamp(2rem, 6vw, 3.25rem);
+	line-height: 1;
+	letter-spacing: 0.04em;
+}
+
+.site-header p {
+	margin: 0.65rem 0 0;
+	font-size: clamp(1rem, 3vw, 1.3rem);
+	letter-spacing: 0.08em;
+	text-transform: lowercase;
+}
